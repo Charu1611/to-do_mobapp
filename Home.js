@@ -1,7 +1,4 @@
-import {
-  View,
-  Text,
-  StatusBar,
+import {View, Text, StatusBar,
   StyleSheet,
   Image,
   Modal,
@@ -76,17 +73,17 @@ export default function Home() {
           }}
         />
         <TouchableOpacity onPress={handleRemoveTask}>
-        <Text style={styles.newText}>Remove the Task</Text>
+        <Text style={styles.newText}>Remove Oldest Task</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.contentCard}>
         <View style={{flex:1,alignItems: 'center'}}>
         <Text style={styles.taskText}>Your Tasks</Text>
         
-        { todoList.length==0 ? (<Text style={{fontSize: 20, padding: 15}}>Empty List</Text>) : todoList.map((todo, index)=>{
+        { todoList.length==0 ? (<Text style={{fontSize: 20, padding: 15,fontStyle:'italic', color:'grey'}}>Empty List</Text>) : todoList.map((todo, index)=>{
           return(
             
-            <Text key={index} style={{alignSelf: 'flex-start', fontSize: 25, color: 'rgb(112,140,213)'}}> - {todo}</Text>
+            <Text key={index} style={{alignSelf: 'flex-start', fontSize: 25, color: 'rgb(112,140,213)',fontWeight: 600}}> - {todo}</Text>
     
           )
         })}
@@ -152,7 +149,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     color: 'rgb(31,60,136)',
     fontWeight: 'bold',
-
+    textDecorationLine: 'underline',
   },
   centeredView:{
     flex:1,
@@ -183,6 +180,7 @@ const styles = StyleSheet.create({
     borderColor: 'grey',
     padding: 10,
     height: 40,
+    color: 'black'
     
   }
 });
